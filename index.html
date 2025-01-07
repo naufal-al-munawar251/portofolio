@@ -6,16 +6,22 @@
     <title>Portfolio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
         body {
             font-family: "Poppins", sans-serif;
-            background-color: #f8f9fa;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
         }
         header {
             background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: white;
             padding: 5rem 0;
             text-align: center;
+            position: relative;
         }
         header h1 {
             font-size: 4rem;
@@ -28,11 +34,25 @@
         header .btn {
             font-size: 1rem;
             padding: 0.8rem 2rem;
+            background-color: #34c759;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        header .btn:hover {
+            background-color: #28a745;
         }
         .section-title {
             margin-bottom: 3rem;
-            font-weight: 600;
-            color: #333;
+            font-weight: 700;
+            color: #6a11cb;
+        }
+        .project-card {
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .project-card img {
             border-radius: 10px;
@@ -45,16 +65,24 @@
             text-align: center;
         }
         footer {
-            background: #333;
-            color: white;
+            background: #f1f1f1;
+            color: #333;
             padding: 2rem 0;
+            text-align: center;
         }
         footer a {
-            color: #ff6347;
+            color: #6a11cb;
             text-decoration: none;
         }
         footer a:hover {
             text-decoration: underline;
+        }
+        .btn-primary {
+            background-color: #6a11cb;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #5a0fb0;
         }
     </style>
 </head>
@@ -62,9 +90,9 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>Welcome to My Portfolio</h1>
-            <h5>Naufal Al Munawar</h5>
-            <p>Mobile Developer</p>
+            <h1>Naufal Al Munawar</h1>
+            <p>Professional Developer | Mobile Apps | Game Development</p>
+            <a href="#contact" class="btn">Get in Touch</a>
         </div>
     </header>
 
@@ -74,215 +102,210 @@
             <h2 class="section-title">About Me</h2>
             <p class="lead">
                 A technology professional with a degree in Information Technology from Politeknik Negeri Indramayu, graduated in September 2024. Experienced in mobile application development using Flutter and Kotlin, as well as game development with Unity. Skilled in backend development using PHP, SQL, and Firebase, and proficient in UI/UX design with Figma. A finalist in national-level technology competitions.
-
             </p>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <!-- Projects Section -->
-<section id="projects" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title text-center">My Projects</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="game_ggj.png" alt="Fantasy Of The Forest">
-                    <div class="card-body">
-                        <h5 class="card-title">Fantasy Of The Forest</h5>
-                        <p class="card-text">A Mobile Game Application aimed at providing entertainment, developed using the Unity Engine.</p>
-                        <a href="https://v3.globalgamejam.org/2023/games/fantasy-forest-8" target="_blank" class="btn btn-primary">View Project</a>
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">My Projects</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="game_ggj.png" alt="Fantasy Of The Forest">
+                        <div class="card-body">
+                            <h5 class="card-title">Fantasy Of The Forest</h5>
+                            <p class="card-text">A Mobile Game Application aimed at providing entertainment, developed using the Unity Engine.</p>
+                            <a href="https://v3.globalgamejam.org/2023/games/fantasy-forest-8" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="towerdefense.webp" alt="Game Tower Defense">
+                        <div class="card-body">
+                            <h5 class="card-title">Game Tower Defense</h5>
+                            <p class="card-text">A Unity-based strategy game featuring tower defense mechanics and engaging gameplay.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.gamego.TechnoOfDefense" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="AplikasiCatatan.jpg" alt="Note App">
+                        <div class="card-body">
+                            <h5 class="card-title">Note App</h5>
+                            <p class="card-text">Firebase-powered app for managing notes with reminders and notifications.</p>
+                            <a href="https://github.com/naufal-al-munawar251/Projek-catatan/tree/master" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="towerdefense.webp" alt="Game Tower Defense">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Tower Defense</h5>
-                        <p class="card-text">A Unity-based strategy game featuring tower defense mechanics and engaging gameplay.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.gamego.TechnoOfDefense" target="_blank" class="btn btn-primary">View Project</a>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Tokoin.jpg" alt="App E-Commerce Tokoin">
+                        <div class="card-body">
+                            <h5 class="card-title">App E-Commerce Tokoin</h5>
+                            <p class="card-text">An e-commerce app designed for seamless online shopping experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="appvaulth.jpg" alt="App Backup Media">
+                        <div class="card-body">
+                            <h5 class="card-title">App Backup Media</h5>
+                            <p class="card-text">A secure media backup application with modern features.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="appqr.jpg" alt="Note App">
+                        <div class="card-body">
+                            <h5 class="card-title">App QR Code</h5>
+                            <p class="card-text">An application for scanning QR barcodes built using the Dart programming language with the Flutter framework.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="AplikasiCatatan.jpg" alt="Note App">
-                    <div class="card-body">
-                        <h5 class="card-title">Note App</h5>
-                        <p class="card-text">Firebase-powered app for managing notes with reminders and notifications.</p>
-                        <a href="https://github.com/naufal-al-munawar251/Projek-catatan/tree/master" target="_blank" class="btn btn-primary">View Project</a>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="appitb.jpg" alt="App E-Commerce Tokoin">
+                        <div class="card-body">
+                            <h5 class="card-title">App Institut Teknologi Bandung IAIF</h5>
+                            <p class="card-text">An application designed for the needs of ITB campus alumni.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="adventure.jpg" alt="App Backup Media">
+                        <div class="card-body">
+                            <h5 class="card-title">Sign Sparks</h5>
+                            <p class="card-text">A gamified learning game designed for children with special needs, specifically those who are speech-impaired and hearing-impaired, focused on teaching sign language.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="appdeteksihoax.jpg" alt="Note App">
+                        <div class="card-body">
+                            <h5 class="card-title">App Britama</h5>
+                            <p class="card-text">An application designed to detect hoax websites or fake news circulating online.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Tokoin.jpg" alt="App E-Commerce Tokoin">
-                    <div class="card-body">
-                        <h5 class="card-title">App E-Commerce Tokoin</h5>
-                        <p class="card-text">An e-commerce app designed for seamless online shopping experience.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="appvaulth.jpg" alt="App Backup Media">
-                    <div class="card-body">
-                        <h5 class="card-title">App Backup Media</h5>
-                        <p class="card-text">A secure media backup application with modern features.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="appqr.jpg" alt="Note App">
-                    <div class="card-body">
-                        <h5 class="card-title">App QR Code</h5>
-                        <p class="card-text">An application for scanning QR barcodes built using the Dart programming language with the Flutter framework.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="appitb.jpg" alt="App E-Commerce Tokoin">
-                    <div class="card-body">
-                        <h5 class="card-title">App Institut Teknologi Bandung IAIF</h5>
-                        <p class="card-text">An application designed for the needs of ITB campus alumni.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="adventure.jpg" alt="App Backup Media">
-                    <div class="card-body">
-                        <h5 class="card-title">Sign Sparks</h5>
-                        <p class="card-text">A gamified learning game designed for children with special needs, specifically those who are speech-impaired and hearing-impaired, focused on teaching sign language.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="appdeteksihoax.jpg" alt="Note App">
-                    <div class="card-body">
-                        <h5 class="card-title">App Britama</h5>
-                        <p class="card-text">An application designed to detect hoax websites or fake news circulating online.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="projects" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title text-center">Sertificate</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat1.png" alt="Fantasy Of The Forest">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Finalis Gemastik Nasional</h5>
-                        <!-- <p class="card-text">A Mobile Game Application aimed at providing entertainment, developed using the Unity Engine.</p> -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Sertificate</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat1.png" alt="Fantasy Of The Forest">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Finalis Gemastik Nasional</h5>
+                            <!-- <p class="card-text">A Mobile Game Application aimed at providing entertainment, developed using the Unity Engine.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat2.png" alt="Game Tower Defense">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Juara 2 Nasional  Game Making competitions</h5>
+                            <!-- <p class="card-text">A Unity-based strategy game featuring tower defense mechanics and engaging gameplay.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat3.png" alt="Note App">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Juara Harapan KMIPN Nasional</h5>
+                            <!-- <p class="card-text">Firebase-powered app for managing notes with reminders and notifications.</p> -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat2.png" alt="Game Tower Defense">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Juara 2 Nasional  Game Making competitions</h5>
-                        <!-- <p class="card-text">A Unity-based strategy game featuring tower defense mechanics and engaging gameplay.</p> -->
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat4.jpg" alt="App E-Commerce Tokoin">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Juara 4 Hacthon UNESCO</h5>
+                            <!-- <p class="card-text">An e-commerce app designed for seamless online shopping experience.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat5.png" alt="App Backup Media">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Google Garage</h5>
+                            <!-- <p class="card-text">A secure media backup application with modern features.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat6.png" alt="Note App">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Pendanaan PKM</h5>
+                            <!-- <p class="card-text">An application for scanning QR barcodes built using the Dart programming language with the Flutter framework.</p> -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat3.png" alt="Note App">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Juara Harapan KMIPN Nasional</h5>
-                        <!-- <p class="card-text">Firebase-powered app for managing notes with reminders and notifications.</p> -->
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat7.png" alt="App E-Commerce Tokoin">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Finalis Gemastik Nasional</h5>
+                            <!-- <p class="card-text">An application designed for the needs of ITB campus alumni.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat8.png" alt="App Backup Media">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Finalis KMIPN Nasional</h5>
+                            <!-- <p class="card-text">A gamified learning game designed for children with special needs, specifically those who are speech-impaired and hearing-impaired, focused on teaching sign language.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat9.png" alt="Note App">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Lolos Pendanaan PIMNAS</h5>
+                            <!-- <p class="card-text">An application designed to detect hoax websites or fake news circulating online.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="Serifikat10.jpg" alt="App E-Commerce Tokoin">
+                        <div class="card-body">
+                            <h5 class="card-title">Sertificate Juara globalgamejam</h5>
+                            <!-- <p class="card-text">An application designed for the needs of ITB campus alumni.</p> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat4.jpg" alt="App E-Commerce Tokoin">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Juara 4 Hacthon UNESCO</h5>
-                        <!-- <p class="card-text">An e-commerce app designed for seamless online shopping experience.</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat5.png" alt="App Backup Media">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Google Garage</h5>
-                        <!-- <p class="card-text">A secure media backup application with modern features.</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat6.png" alt="Note App">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Pendanaan PKM</h5>
-                        <!-- <p class="card-text">An application for scanning QR barcodes built using the Dart programming language with the Flutter framework.</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat7.png" alt="App E-Commerce Tokoin">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Finalis Gemastik Nasional</h5>
-                        <!-- <p class="card-text">An application designed for the needs of ITB campus alumni.</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat8.png" alt="App Backup Media">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Finalis KMIPN Nasional</h5>
-                        <!-- <p class="card-text">A gamified learning game designed for children with special needs, specifically those who are speech-impaired and hearing-impaired, focused on teaching sign language.</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat9.png" alt="Note App">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Lolos Pendanaan PIMNAS</h5>
-                        <!-- <p class="card-text">An application designed to detect hoax websites or fake news circulating online.</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card project-card shadow-sm">
-                    <img src="Serifikat10.jpg" alt="App E-Commerce Tokoin">
-                    <div class="card-body">
-                        <h5 class="card-title">Sertificate Juara globalgamejam</h5>
-                        <!-- <p class="card-text">An application designed for the needs of ITB campus alumni.</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
@@ -295,7 +318,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container text-center">
+        <div class="container">
             <p>&copy; 2025 Naufal Al Munawar. All rights reserved.</p>
             <p>Follow me on <a href="https://github.com/naufal-al-munawar251" target="_blank">GitHub</a></p>
         </div>
