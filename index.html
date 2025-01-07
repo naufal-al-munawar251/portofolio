@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+        }
+        .player-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .player-info div {
+            margin: 0 20px;
+        }
+        .vs {
+            font-size: 1.2em;
+            color: #ffeb3b;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+            margin-top: 20px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .cell:hover:not(.taken) {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .cell.taken {
+            cursor: not-allowed;
+        }
+        .scores {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="player-info">
+            <div id="playerX">Player X: Waiting...</div>
+            <div class="vs">VS</div>
+            <div id="playerO">Player O: Waiting...</div>
+        </div>
+        <div id="message"></div>
+        <div id="scores" class="scores">Scores: Player X - 0, Player O - 0</div>
+        <div class="board" id="board"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      const boardElement = document.getElementById('board');
+      const messageElement = document.getElementById('message');
+      const scoresElement = document.getElementById('scores');
+      const playerXElement = document.getElementById('playerX');
+      const playerOElement = document.getElementById('playerO');
+  
+      let player = null;
+  
+      const name = prompt('Enter your name:');
+      socket.emit('register', name);
+  
+      for (let i = 0; i < 9; i++) {
+          const cell = document.createElement('div');
+          cell.classList.add('cell');
+          cell.dataset.index = i;
+          boardElement.appendChild(cell);
+      }
+  
+      socket.on('playerAssigned', (playerInfo) => {
+          player = playerInfo;
+          messageElement.textContent = `Welcome, ${player.name}. You are Player ${player.symbol}`;
+      });
+  
+      socket.on('playerList', (players) => {
+    const playerX = players.find(p => p.symbol === 'X');
+    const playerO = players.find(p => p.symbol === 'O');
+    playerXElement.textContent = `Player X: ${playerX ? playerX.name : 'Waiting...'}`;
+    playerOElement.textContent = `Player O: ${playerO ? playerO.name : 'Waiting...'}`;
+});
+  
+      socket.on('gameStart', (message) => {
+          messageElement.textContent = message;
+      });
+  
+      socket.on('boardUpdate', ({ board }) => {
+          Array.from(boardElement.children).forEach((cell, index) => {
+              cell.textContent = board[index];
+              if (board[index] !== null) {
+                  cell.classList.add('taken');
+              } else {
+                  cell.classList.remove('taken');
+              }
+          });
+      });
+  
+      socket.on('scoresUpdate', (scores) => {
+    scoresElement.textContent = `Scores: Player X - ${scores.X}, Player O - ${scores.O}`;
+});
+  
+      socket.on('gameEnd', ({ message }) => {
+          messageElement.textContent = message;
+      });
+  
+      socket.on('message', (message) => {
+    messageElement.textContent = message;
+});
+  
+      boardElement.addEventListener('click', (event) => {
+          const index = event.target.dataset.index;
+          if (index !== undefined && !event.target.classList.contains('taken')) {
+              socket.emit('makeMove', parseInt(index));
+          }
+      });
+  </script>
+  
+</body>
+</html>
